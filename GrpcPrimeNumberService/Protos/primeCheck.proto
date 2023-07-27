@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcPrimeNumberService";
+
+package prime;
+
+service PrimeCheck {
+	rpc CheckPrime (PrimeRequest) returns (PrimeReply);
+} 
+
+message PrimeRequest {
+	int64 id=1;
+	int64 timestamp=2;
+	int64 number=3;
+}
+
+message PrimeReply {
+	int64 id=1;
+	int64 timestamp=2;
+	int64 number=3;
+	bool isprime=4;
+}
